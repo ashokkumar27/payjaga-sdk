@@ -180,3 +180,37 @@ h1 {
     border-left-color: var(--purple);
   }
 }
+
+/* Minimal hero: product statement first, technical visuals below the fold. */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: min(650px, calc(100svh - 140px));
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(2.65rem, 4.2vw, 3.9rem);
+}
+
+.hero-copy {
+  max-width: 620px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: min(640px, calc(100svh - 110px));
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  h1 {
+    font-size: clamp(2.15rem, 9vw, 2.9rem);
+  }
+}
