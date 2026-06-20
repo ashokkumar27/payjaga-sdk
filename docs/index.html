@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PayJaga SDK | Payment protection for agentic Solana apps</title>
+  <meta name="description" content="PayJaga SDK checks paid API challenges before wallet signing.">
+  <meta property="og:title" content="PayJaga SDK">
+  <meta property="og:description" content="Payment protection for agentic Solana apps before wallet signing.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#050708">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="PayJaga SDK home"><span class="brand-mark"></span><span>PayJaga SDK</span></a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#how">How it works</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#sdk">SDK</a>
+      <a href="https://github.com/ashokkumar27/payjaga-sdk">GitHub</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="payment-rail" aria-hidden="true">
+        <span class="rail-line line-a"></span>
+        <span class="rail-line line-b"></span>
+        <span class="rail-node node-agent">Agent</span>
+        <span class="rail-node node-guard">Guard</span>
+        <span class="rail-node node-wallet">Wallet</span>
+        <span class="rail-node node-api">Paid API</span>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Solana-ready payment guard</p>
+        <h1 id="hero-title">Payment protection for agentic Solana apps.</h1>
+        <p class="hero-copy">Evaluate paid API challenges before a wallet signs. PayJaga gives agents and developers a clear allow, approval, escrow, or block decision.</p>
+        <div class="hero-actions">
+          <button class="command-pill" type="button" data-copy="npm install @payjaga/sdk"><span>npm install @payjaga/sdk</span><strong>Copy</strong></button>
+          <a class="primary-link" href="#sdk">Start integrating</a>
+          <a class="secondary-link" href="https://github.com/ashokkumar27/payjaga-sdk">View GitHub</a>
+        </div>
+      </div>
+    </section>
+    <section class="signal-band" aria-label="PayJaga decision summary">
+      <div class="signal-item"><span class="signal-value">4</span><span class="signal-label">payment outcomes</span></div>
+      <div class="signal-item"><span class="signal-value">402</span><span class="signal-label">challenge-aware flow</span></div>
+      <div class="signal-item"><span class="signal-value">0 deps</span><span class="signal-label">SDK runtime dependencies</span></div>
+    </section>
+    <section id="how" class="section" aria-labelledby="how-title">
+      <div class="section-heading"><p class="eyebrow">Before funds move</p><h2 id="how-title">Put a guardrail between paid data and wallet signing.</h2></div>
+      <div class="flow-grid">
+        <article><span class="step-index">01</span><h3>Receive the challenge</h3><p>Your agent requests a paid API and receives a payment challenge from x402, Pay.sh, or your merchant flow.</p></article>
+        <article><span class="step-index">02</span><h3>Evaluate with PayJaga</h3><p>The SDK sends merchant, wallet, endpoint, amount, nonce, and challenge context to the Guard API.</p></article>
+        <article><span class="step-index">03</span><h3>Apply the decision</h3><p>Continue, ask for approval, route through escrow, or stop before any transaction is signed.</p></article>
+        <article><span class="step-index">04</span><h3>Record the outcome</h3><p>Use the decision and receipt metadata to make payment behavior auditable for users and operators.</p></article>
+      </div>
+    </section>
+    <section id="decisions" class="section" aria-labelledby="decision-title">
+      <div class="section-heading"><p class="eyebrow">Live decision model</p><h2 id="decision-title">Show developers what happens before signing.</h2></div>
+      <div class="decision-layout">
+        <div class="scenario-controls" role="tablist" aria-label="Payment scenarios">
+          <button class="scenario-button active" type="button" data-scenario="allow" role="tab" aria-selected="true">Allowed payment</button>
+          <button class="scenario-button" type="button" data-scenario="approval" role="tab" aria-selected="false">Human approval</button>
+          <button class="scenario-button" type="button" data-scenario="escrow" role="tab" aria-selected="false">Escrow required</button>
+          <button class="scenario-button" type="button" data-scenario="block" role="tab" aria-selected="false">Blocked request</button>
+        </div>
+        <div class="decision-console" aria-live="polite">
+          <div class="console-header"><span class="status-dot"></span><span id="console-title">ALLOW_DIRECT</span></div>
+          <dl class="decision-metrics">
+            <div><dt>Risk</dt><dd id="metric-risk">12</dd></div>
+            <div><dt>Trust</dt><dd id="metric-trust">82</dd></div>
+            <div><dt>Funds move</dt><dd id="metric-funds">Yes</dd></div>
+          </dl>
+          <pre id="decision-output"><code></code></pre>
+        </div>
+      </div>
+    </section>
+    <section id="sdk" class="section" aria-labelledby="sdk-title">
+      <div class="section-heading"><p class="eyebrow">Developer quickstart</p><h2 id="sdk-title">One SDK call before the payment client runs.</h2></div>
+      <div class="code-shell">
+        <div class="code-tabs" role="tablist" aria-label="SDK examples">
+          <button class="code-tab active" type="button" data-snippet="evaluate" role="tab" aria-selected="true">evaluate()</button>
+          <button class="code-tab" type="button" data-snippet="guarded" role="tab" aria-selected="false">guardedFetch()</button>
+          <button class="copy-code" type="button">Copy code</button>
+        </div>
+        <pre><code id="code-snippet"></code></pre>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="use-case-title">
+      <div class="section-heading"><p class="eyebrow">Built for payment-aware agents</p><h2 id="use-case-title">Use it anywhere an autonomous flow might spend.</h2></div>
+      <div class="use-case-grid">
+        <article><h3>x402 paid APIs</h3><p>Gate paid resources before retrying with a payment header.</p></article>
+        <article><h3>Sports and data agents</h3><p>Protect agents buying research, signals, market data, or live feeds.</p></article>
+        <article><h3>Subscription flows</h3><p>Review recurring pulls and route risky plans to human approval.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>PayJaga SDK</span><a href="https://github.com/ashokkumar27/payjaga-sdk">GitHub</a><a href="#sdk">Quickstart</a></footer>
+  <script src="./app.js"></script>
+</body>
+</html>

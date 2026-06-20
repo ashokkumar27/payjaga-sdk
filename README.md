@@ -1,5 +1,7 @@
 # @payjaga/sdk
 
+Website: https://ashokkumar27.github.io/payjaga-sdk/
+
 TypeScript client for checking agent-initiated payment requests with PayJaga before a wallet signs or a payment client retries a paid resource.
 
 Use it when your app, agent, or SDK integration receives a paid API challenge and needs a clear decision:
