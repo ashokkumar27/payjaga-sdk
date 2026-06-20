@@ -214,3 +214,75 @@ h1 {
     font-size: clamp(2.15rem, 9vw, 2.9rem);
   }
 }
+
+/* Whole-page density and responsive readability pass. */
+.section {
+  padding: clamp(3.75rem, 7vw, 5.5rem) 5vw;
+}
+
+.section-heading {
+  max-width: 920px;
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  line-height: 1.1;
+}
+
+.flow-grid article {
+  min-height: 210px;
+}
+
+.use-case-grid article {
+  min-height: 190px;
+}
+
+#decision-output {
+  overflow-x: hidden;
+}
+
+#decision-output code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .signal-band {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .signal-item {
+    padding: 1rem 0.7rem;
+    border-right: 1px solid var(--line);
+  }
+
+  .signal-item:last-child {
+    border-right: 0;
+  }
+
+  .signal-value {
+    font-size: 1.55rem;
+  }
+
+  .signal-label {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .flow-grid article,
+  .use-case-grid article {
+    min-height: auto;
+    padding: 1.3rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.6rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+}
