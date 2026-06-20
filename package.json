@@ -1,0 +1,36 @@
+{
+  "name": "@payjaga/sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "description": "Thin PayJaga client SDK for evaluating payment challenges against a hosted Guard API",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashokkumar27/payjaga-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashokkumar27/payjaga-sdk/issues"
+  },
+  "homepage": "https://github.com/ashokkumar27/payjaga-sdk#readme"
+}

@@ -1,0 +1,6 @@
+src/
+examples/
+node_modules/
+*.log
+tsconfig.json
+package-lock.json
